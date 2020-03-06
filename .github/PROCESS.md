@@ -43,7 +43,7 @@ If QA found some bug or he suggest to add some feature to a project, he creates 
 
 We use 7 default labels which added to the repository when start developing.
 
-- `bug` - Indicates that an issue or pull request is no longer relevant
+- `bug` - Something isn't working
 - `question` - Indicates that an issue or pull request needs more information
 - `production` - Indicates that an issue happened on production
 - `staging` - Indicates that an issue happened on staging
