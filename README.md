@@ -63,7 +63,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Process
 
-Please read [PROCESS.md](docs/PROCESS.md) for details on our code of conduct, and the process for submitting pull requests.
+Please read [PROCESS.md](.github/PROCESS.md) for details on our code of conduct, and the process for submitting pull requests.
 
 ## Versioning
 
