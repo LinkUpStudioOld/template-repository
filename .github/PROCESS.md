@@ -41,9 +41,10 @@ If QA found some bug or he suggest to add some feature to a project, he creates 
 
 ### Labels
 
-We use 7 default labels which added to the repository when start developing.
+We use 8 default labels which added to the repository when start developing.
 
 - `bug` - Something isn't working
+- `docs` - Improvements or additions to documentation
 - `question` - Indicates that an issue or pull request needs more information
 - `production` - Indicates that an issue happened on production
 - `staging` - Indicates that an issue happened on staging
