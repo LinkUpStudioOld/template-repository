@@ -58,7 +58,7 @@ Issue can be related to GitHub projects. You can set it during issue creation.
 
 ### Milestone
 
-We are working with small milestones for one or two weeks or more. So, when you add issue you can choose the current milestone or create a new one.
+We are working with small milestones for one or two or more weeks. So, when you add issue you can choose the current milestone or create a new one.
 
 ## Workflow
 
@@ -74,7 +74,7 @@ Basically, we have to maintain 5 types of branches:
 - `hotfix`:  If an issue in `master` is detected a hotfix branch is created from `master`. Once the hotfix is complete it is merged to both `master` and `develop`.
 - `release`: Semi-stable, ready to release, following with a few bugfixes. Checkout from `develop` and push to both `master` and `develop` if it's done.
 
-All branches should follow the syntax of `{type}-{details}` where `{type}` is the type of branch (`hotfix`, `release`, or one of the [commit types](#commit-message-format)) and `{details}` is a few hyphen separated words explaining the branch
+All branches should follow the syntax of `{type}/{details}` where `{type}` is the type of branch (`hotfix`, `release`, or one of the [commit types](#commit-message-format)) and `{details}` is a few hyphen separated words explaining the branch
 
 ### Master and Develop Branches
 
@@ -84,7 +84,7 @@ Branches created from `master`:
 
 The following branch should be merged back to **both** `master` and `develop`:
 
-- A `hotfix` branch (e.g. `hotfix-style-changes`): a bug fix that is fixing an issue with a published release
+- A `hotfix` branch (e.g. `hotfix/style-changes`): a bug fix that is fixing an issue with a published release
 
 A `hotfix` branch should be the **only** branch that is created from `master`.
 
@@ -94,13 +94,13 @@ Branches created from `develop`:
 
 The following branches should be merged back to `develop`:
 
-1. A feature branch (e.g. `feat-oauth2-support`): an addition to the API that is not a bug fix or regression fix
-1. A bug fix branch (e.g. `fix-tab-color`): a bug fix that is not fixing a regression or issue with a published release
+1. A feature branch (e.g. `feature/oauth2-support`): an addition to the API that is not a bug fix or regression fix
+1. A bug fix branch (e.g. `fix/tab-color`): a bug fix that is not fixing a regression or issue with a published release
 1. All other types listed in the [commit message types](#commit-message-format)
 
 The following branch should be merged back to **both** `master` and `develop`:
 
-1. A `release` branch (e.g. `release-0.1.x`): contains all fixes and (optionally) features that are tested and should go into the release
+1. A `release` branch (e.g. `release/0.1.x`): contains all fixes and (optionally) features that are tested and should go into the release
 
 
 ### Feature Branches
@@ -149,6 +149,7 @@ Hotfixes bypass `develop` and should only be used for urgent fixes that can't wa
 
 
 1. Confirm squash and merge into `master`.
+1. Delete created branch.
 1. Merge `master` into `develop`.
 
 ### Commit Message Format
@@ -170,7 +171,7 @@ You can use free [tools](https://www.npmjs.com/package/commitizen) to generate a
 
 ## Releasing
 
-1. Create the release branch from `develop`, for example: `release-1.5.0`.
+1. Create the release branch from `develop`, for example: `release/1.5.0`.
 
 1. Verify all tests are passing, fix any bugs if needed and make sure no undesired commits are in.
 
