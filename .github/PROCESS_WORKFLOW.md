@@ -99,3 +99,8 @@ Hotfixes bypass `develop` and should only be used for urgent fixes that can't wa
 1. Confirm squash and merge into `master`.
 1. Delete created branch.
 1. Merge `master` into `develop`.
+
+### Merge branches
+
+When you merge 2 branches, don't change commit message. Just write `git commit` in the terminal (or IDE) without `-m` flag, you will see editor like vim or nano, close it and that is all.
+Sometimes you can get conflicts after merge. You need to fix conflicts in specific files, add only these files via `git add [filename]` (or IDE). And write `git commit` without message.
