@@ -4,15 +4,17 @@
 
 ![](https://user-images.githubusercontent.com/7302777/76073858-fea83a80-5fa2-11ea-8661-ce6bf2176456.png)
 
-Basically, we have to maintain 5 types of branches:
+Basically, we have to maintain 7 types of branches:
 
 - `master`: Stable, direct to production.
 - `develop`: Unstable, all feature changes will be pushed here. Feature, refactor, and bug fix branches are created from `develop`. When a feature, refactor, or fix is complete it is merged into `develop`.
 - `feature`: Check out from `develop` branch, and push changes back to it.
+- `refactor`: The same as `feature` but it's not a new features, it can be code refactor or text changes or update dependencies or something else which is not something new.
 - `hotfix`:  If an issue in `master` is detected a hotfix branch is created from `master`. Once the hotfix is complete it is merged to both `master` and `develop`.
+- `fix`: Similar to `hotfix` but an issue is detected on unstable branch as `develop`.
 - `release`: Semi-stable, ready to release, following with a few bugfixes. Checkout from `develop` and push to both `master` and `develop` if it's done.
 
-All branches should follow the syntax of `{type}/{details}` where `{type}` is the type of branch (`hotfix`, `release`, or one of the [commit types](#commit-message-format)) and `{details}` is a few hyphen separated words explaining the branch
+All branches should follow the syntax of `{type}/{details}` where `{type}` is the type of branch (`hotfix`, `release`, or one of the [commit types](#commit-message-format)) and `{details}` is a few hyphen separated words explaining the branch. You can use other name of type, it's not forbidden. It's just rules for better understanding the process.
 
 ## Master and Develop Branches
 
