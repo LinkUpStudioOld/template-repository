@@ -47,6 +47,10 @@ The following branch should be merged back to **both** `master` and `develop`:
 
 Each new feature should reside in its own branch, based on the `develop` branch. When a feature is complete, it should be merged back into `develop`. Features should never interact directly with `master`.
 
+## Refactor Branches
+
+Each part of refactor should reside in its own branch, based on the `develop` branch. When a refactor is complete, it should be merged back into `develop`. Refactor should never interact directly with `master`.
+
 
 ## Release Branches
 
@@ -57,6 +61,10 @@ Once the `release` is ready, it will get merged into `master` and `develop`, the
 ## Hotfix Branches
 
 Maintenance or “hotfix” branches are used to quickly patch production releases. This is the only branch that should fork directly off of `master`. As soon as the fix is complete, it should be merged into both `master` and `develop` (or the current release branch).
+
+## Fix Branches
+
+“fix” branches are used to quickly patch for develop. This branch similar to `refactor`. As soon as the fix is complete, it should be merged into `develop` (or the current release branch).
 
 ## Examples
 
