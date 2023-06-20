@@ -1,6 +1,6 @@
-# Project Title
+# {Project Title}
 
-One Paragraph of project description goes here
+{One paragraph of project description goes here. This should be brief, attention-catching, and ideally explains what the problem the project solves, who it's for, or what its main features are.}
 
 ## Getting Started
 
@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things do you need to install the software and how to install them
 
 ```
 Give examples
@@ -16,40 +16,34 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+{Detailed instructions on how to install, setup, and get the project running in the local dev environment. This could include a list of dependencies and the commands to install them.}
 
 ```
-Give the example
+Give examples
 ```
 
-And repeat
+### Usage
+
+{Instructions on how to use the project after installation. Include screenshots, code examples, and demo videos if applicable.}
 
 ```
-until finished
+Give examples
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+### Contributing
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+{If you want to accept contributions to your project, provide instructions on how to do so. Make sure to also include guidelines for contributions.}
 
 ```
-Give an example
+Give examples
 ```
 
-### And coding style tests
+### Tests
 
-Explain what these tests test and why
+{Describe how to run the automated tests for this system, including how to see the coverage of the tests.}
 
 ```
-Give an example
+Give examples
 ```
 
 ## Deployment
