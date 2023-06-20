@@ -1,52 +1,65 @@
-# Conventional Commits
+# Commit Message Guidelines
 
-## Summary
-The Conventional Commits specification is a lightweight convention on top of commit messages. It provides an easy set of rules for creating an explicit commit history. It's easy to describe the features, fixes, and breaking changes made in commit messages.
+This project adheres to the [Conventional Commits](https://www.conventionalcommits.org/) standard to create meaningful and standardized commit messages. This leads to more readable histories and more intuitive release notes.
 
-The commit message should be structured as follows:
+## Structure of a Commit Message
+A commit message consists of a **header**, **body** (optional), and **footer** (optional). The header has a special format that includes a **type**, an optional **scope**, and a **description**:
 ```
-<type>[optional scope]: <description>
+<type>(<scope>): <description>
 
-[optional body]
+<body>
 
-[optional footer(s)]
-```
-
-The commit contains the following structural elements, to communicate intent to the consumers of your library:
-
-1. **fix**: a commit of the type fix patches a bug in your codebase (this correlates with PATCH in semantic versioning).
-1. **feat**: a commit of the type feat introduces a new feature to the codebase (this correlates with MINOR in semantic versioning).
-1. **BREAKING CHANGE**: a commit that has a footer BREAKING CHANGE:, or appends a ! after the type/scope, introduces a breaking API change (correlating with MAJOR in semantic versioning). A BREAKING CHANGE can be part of commits of any type.
-1. **types** other than fix: and feat: are allowed, we recommend to use build:, ci:, docs:, style:, refactor:, perf:, test:, and others.
-1. **footers** other than BREAKING CHANGE: <description> may be provided and follow a convention similar to git trailer format.
-
-## Examples
-
-### Commit message with description and breaking change footer
-```
-feat: allow provided config object to extend other configs
-
-BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+<footer>
 ```
 
-### Commit message with `!` to draw attention to breaking change
+## Type
+Type must be one of the following:
+
+* **fix**: A bug fix
+* **feat**: A new feature
+* **chore**: Regular code maintenance tasks
+* **docs**: Documentation only changes
+* **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+* **refactor**: A code change that neither fixes a bug nor adds a feature
+* **perf**: A code change that improves performance
+* **test**: Adding missing or correcting existing tests
+
+## Scope
+
+Scope is optional and can be anything specifying the place of the commit change. For example **auth**, **model**, **view**, **controller**, etc.
+
+## Description
+
+The description is a short description of the change. It should be:
+
+* written in lower case
+* a succinct summary of the change, not exceeding 50 characters
+* not ending with a period
+
+## Body
+
+The body is optional. When present, it should include a more detailed explanation of the change. You can also include rationale and context here. Each paragraph in the body should be separated by a blank line.
+
+## Footer
+
+The footer is optional. When present, it should contain any information about **Breaking Changes**, and is also the place to reference GitHub issues that this commit closes.
+
+Breaking Changes should start with the word `BREAKING CHANGE:` with a space or two newlines.
+
+Here's an example of a commit message:
+
 ```
-refactor!: drop support for Node 8
+feat(user): add password reset feature
+
+This commit introduces a new feature that allows users to reset their password. The user will receive an email with a link that redirects to the password reset page.
+
+BREAKING CHANGE: Updates user model to include password reset token.
+
+Resolves #123
 ```
 
-### Commit message with both ! and BREAKING CHANGE footer
-```
-refactor!: drop support for Node 8
+Please ensure all your commits follow this format. This greatly helps us in maintaining the project and understanding the changes.
 
-BREAKING CHANGE: refactor to use JavaScript features not available in Node 8.
-```
+---
 
-### Commit message with no body (the most popular type of commit)
-```
-docs: correct spelling of CHANGELOG
-```
-
-### Commit message with scope (use it when you want to describe a part of module or feature)
-```
-feat(lang): add polish language
-```
+Remember, a well-formed commit message can help streamline the review process and make it much easier to track down bugs or understand why a particular change was made.
