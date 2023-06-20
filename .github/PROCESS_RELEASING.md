@@ -1,30 +1,22 @@
-# Releasing
+# Release Process
+This document outlines our process for releasing updates to our software. These steps ensure that we maintain a high standard of quality control, while also allowing us to deliver updates to our users in a timely manner.
 
-1. Create the release branch from `develop`, for example: `release/1.5.0`.
+## Feature or Bugfix Pull Request
+The first step in our release process is to create a pull request for your feature or bugfix. Please provide a detailed description of the changes in your PR. The more information you provide, the easier it is for others to understand the purpose and impact of your changes.
 
-1. Verify all tests are passing, fix any bugs if needed and make sure no undesired commits are in.
+Remember to follow our coding standards and include any necessary tests to verify your changes. Also, consider whether your changes require updates to the documentation.
 
-1. Create pull request from the `release` branch into `master` branch.
+## Merging into Main Branch
+After your pull request has been reviewed and approved, it will be merged into the main branch. Please ensure all tests are passing before merging your pull request.
 
-1. Click **Squash and merge**. Use the dropdown to select this option if necessary.
+The main branch serves as the pre-production staging area. All changes should be thoroughly tested and vetted here before they are released to production.
 
-    <img width="192" alt="Squash and merge button" src="https://user-images.githubusercontent.com/236501/47031620-da418900-d135-11e8-91ff-e84f2478b2b3.png">
+## Deployment to Staging
+After your changes have been merged into the main branch, our CI/CD pipeline will automatically deploy them to the staging environment.
 
-1. Confirm squash and merge into `master`.
-1. Merge `release` into `develop`.
+This will also create a draft release tag. This tag is used to track the changes that are included in the upcoming release. It's important to keep an eye on the staging environment to make sure everything is working as expected.
 
-## Tags
+## Release and Production Deployment
+The final step in the process is to publish the release. This action triggers the CI/CD pipeline to deploy the changes to the production environment.
 
-A Git tag is similar to a Git reference, but the Git commit that it points to never changes. Git tags are helpful when you want to point to specific releases. 
-
-You should create tags after each release or hotfix.
-
-Tag name should follow the syntax of `v{major}.{minor}.{patch}`, e.g. `v1.5.0`
-
-For `major` or `minor` releases, create a version based off core changes or a new features. This version should be created after merge `release` branch into `master`.
-
-For `patch` releases, create a version after merge `hotfix` branch into `master`.
-
-## Changelog
-
-Update the changelog for each release or hotfix. We use changelog structure described in [keep a changelog](https://keepachangelog.com/en/1.0.0/)
+Remember to update the release notes to describe the changes included in the release. This will help users understand what has changed and how it might affect them.
