@@ -48,12 +48,18 @@ Give examples
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+{Add additional notes about how to deploy this on a live system}
 
 ## Built With
 
 * [React](https://reactjs.org/) - A JavaScript library for building user interfaces
-* [Ruby On Rails](https://rubyonrails.org/) - A server-side web application framework
+* [Next.js](https://nextjs.org) - The React Framework for the Web
+* [React Native](https://reactnative.dev) - React Native combines the best parts of native development with React, a best-in-class JavaScript library for building user interfaces. 
+* [Flutter](https://flutter.dev) - Flutter is an open source framework by Google for building natively compiled, multi-platform applications from a single codebase
+* [NestJS](https://nestjs.com) - A progressive Node.js framework for building server-side applications.
+* [Laravel](https://laravel.com) - The PHP Framework for Web Artisans
+* [Ruby On Rails](https://rubyonrails.org) - A server-side Ruby application framework
+* [.NET](https://dotnet.microsoft.com/en-us/) - .NET is cross-platform framework for building modern apps and powerful cloud services.
 
 ## Process
 
