@@ -1,18 +1,14 @@
-## Pull request checklist
+# Title: {Summary}
 
-Please check if your PR fulfills the following requirements:
-- [ ] Tests for the changes have been added (for bug fixes / features)
-- [ ] Docs have been reviewed and added / updated if needed (for bug fixes / features)
-- [ ] Build was run locally and any changes were pushed
-- [ ] Lint has passed locally and any fixes were made for failures
+## Description:
+{Provide a short summary of the changes this pull request is introducing.}
 
+## Testing:
+{Provide a brief description of how you tested the code or a link to a recorded demo. Also mention new unit or integration tests added, if any.}
 
-## Pull request type
-
-Please check the type of change your PR introduces:
-- [ ] Hotfix
-- [ ] Release
-- [ ] Draft
-
-
-## Other information
+## Automated Checks:
+- Code linting
+- Unit tests
+- Integration tests
+- Code coverage
+- No merge conflicts
