@@ -12,3 +12,7 @@
 - Integration tests
 - Code coverage
 - No merge conflicts
+
+## Other
+- Follow [code review](PROCESS_CODE_REVIEW.md) instructions
+- Follow [commit convention](PROCESS_COMMIT_MESSAGE.md) instructions
