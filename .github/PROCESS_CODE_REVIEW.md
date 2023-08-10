@@ -33,4 +33,4 @@
 ## When and Who Should Merge the Code:
 - The team lead should decide when a PR is ready to be merged
 - Do not merge until all found bugs are fixed, all discussions are solved, and all tests/build failures are fixed
-- If a merged PR causes failures in the dev or main branch, the developer who merged is responsible for fixing it ASAP
+- If a merged PR causes failures in the develop or main branch, the developer who merged is responsible for fixing it ASAP
