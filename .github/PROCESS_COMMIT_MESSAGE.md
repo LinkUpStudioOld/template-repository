@@ -42,20 +42,18 @@ The body is optional. When present, it should include a more detailed explanatio
 
 ## Footer
 
-The footer is optional. When present, it should contain any information about **Breaking Changes**, and is also the place to reference GitHub issues that this commit closes.
+The footer is optional. When present, it should contain any information about **Breaking Changes**.
 
 Breaking Changes should start with the word `BREAKING CHANGE:` with a space or two newlines.
 
 Here's an example of a commit message:
 
 ```
-feat(user): add password reset feature
+feat(user): add reset password feature
 
 This commit introduces a new feature that allows users to reset their password. The user will receive an email with a link that redirects to the password reset page.
 
 BREAKING CHANGE: Updates user model to include password reset token.
-
-Resolves #123
 ```
 
 Please ensure all your commits follow this format. This greatly helps us in maintaining the project and understanding the changes.
