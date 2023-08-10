@@ -1,4 +1,4 @@
-[!!!][You can use one of two workflows that shared below. **Workflow 1** is for projects that should be developed as quickly as possible, it doesn't care about quality, release happens few times a week. **Workflow 2** is for stable projects, each release should be tested before merge into main.]
+[!!!][You can use one of two workflows that shared below. **Workflow 1** is for projects that should be developed as quickly as possible, it doesn't care about quality, release happens few times a week. **Workflow 2** is for stable projects, each release should be tested before merge into main. Remove this comment after project init]
 
 # Workflow 1
 ![Git Workflows-workflow without develop branch drawio (1)](https://github.com/LinkUpStudioOld/template-repository/assets/7302777/49c48fa4-5e47-4ba5-95eb-59330b5b56bc)
@@ -34,10 +34,10 @@ When ready to release to production, publish the draft release.
 Publishing the release can be set up to trigger a build and deployment process to the production environment.
 
 ## Branch Naming Convention:
-- Feature Branch: feature/{details}
-- Hotfix Branch: hotfix/{details}
+- Feature Branch: `feature/{details}`
+- Hotfix Branch: `hotfix/{details}`
 
-All branches should follow the syntax of {type}/{details} where {type} is the type of branch (hotfix, feature, or one of the [commit types](/.github/PROCESS_COMMIT_MESSAGE.md)) and {details} is a few hyphen separated words explaining the branch. You can use other name of type, it's not forbidden. It's just rules for better understanding the process.
+All branches should follow the syntax of `{type}/{details}` where `{type}` is the type of branch (`hotfix`, `feature`, or one of the [commit types](/.github/PROCESS_COMMIT_MESSAGE.md)) and `{details}` is a few hyphen separated words explaining the branch. You can use other name of type, it's not forbidden. It's just rules for better understanding the process.
 
 ## Workflow Benefits:
 - Provides a simplified and streamlined branching strategy.
@@ -49,7 +49,7 @@ All branches should follow the syntax of {type}/{details} where {type} is the ty
 
 # Workflow 2
 
-![Git Workflows-workflow with develop branch drawio](https://github.com/LinkUpStudioOld/template-repository/assets/7302777/40f730fa-9a4e-4af9-9ec0-0852fb9ccb05)
+![Git Workflows-workflow with develop branch drawio (1)](https://github.com/LinkUpStudioOld/template-repository/assets/7302777/4d5271f1-d7e7-4557-b80b-54439faa30e5)
 
 
 ## Overview
@@ -93,79 +93,29 @@ Developers create a release branch from the develop branch.
 
 After including a few bug fixes and ensuring stability, the release branch is merged back into both the main and develop branches.
 
+## Branch Naming Convention:
 
-# Outdated
-![04 Hotfix branches](https://github.com/LinkUpStudioOld/template-repository/assets/7302777/ed90fadd-373a-4249-82f5-548e0765cba8)
+- Feature Branch: `feature/{details}`
+- Refactor Branch: `refactor/{details}`
+- Hotfix Branch: `hotfix/{details}`
+- Fix Branch: `fix/{details}`
+- Release Branch: `release/{details}`
 
-Basically, we have to maintain 7 types of branches:
+All branches should follow the syntax of `{type}/{details}` where `{type}` is the type of branch (`hotfix`, `feature`, `release`, or one of the [commit types](/.github/PROCESS_COMMIT_MESSAGE.md)) and `{details}` is a few hyphen separated words explaining the branch. You can use other name of type, it's not forbidden. It's just rules for better understanding the process.
 
-- `main`: Stable, direct to staging.
-- `develop`: Unstable, all feature changes will be pushed here. Feature, refactor, and bug fix branches are created from `develop`. When a feature, refactor, or fix is complete it is merged into `develop`.
-- `feature`: Check out from `develop` branch, and push changes back to it.
-- `refactor`: The same as `feature` but it's not a new features, it can be code refactor or text changes or update dependencies or something else which is not something new.
-- `hotfix`:  If an issue in `main` is detected a hotfix branch is created from `main`. Once the hotfix is complete it is merged to both `main` and `develop`.
-- `fix`: Similar to `hotfix` but an issue is detected on unstable branch as `develop`.
-- `release`: Semi-stable, ready to release, following with a few bugfixes. Checkout from `develop` and push to both `main` and `develop` if it's done.
+## Workflow Benefits:
 
-All branches should follow the syntax of `{type}/{details}` where `{type}` is the type of branch (`hotfix`, `release`, or one of the [commit types](/.github/PROCESS_COMMIT_MESSAGE.md)) and `{details}` is a few hyphen separated words explaining the branch. You can use other name of type, it's not forbidden. It's just rules for better understanding the process.
+- Provides a clear and structured branching strategy for both new features and maintenance changes.
+- Separate branches for different types of changes make it easier to track and manage the codebase's evolution.
+- Differentiates between critical production fixes (hotfixes) and unstable branch fixes (fixes).
 
-## Main and Develop Branches
+# Other
 
-### Main Branch
-
-Branches created from `main`:
-
-The following branch should be merged back to **both** `main` and `develop`:
-
-- A `hotfix` branch (e.g. `hotfix/style-changes`): a bug fix that is fixing an issue with a published release
-
-A `hotfix` branch should be the **only** branch that is created from `main`.
-
-### Develop Branch
-
-Branches created from `develop`:
-
-The following branches should be merged back to `develop`:
-
-1. A feature branch (e.g. `feature/oauth2-support`): an addition to the API that is not a bug fix or regression fix
-1. A bug fix branch (e.g. `fix/tab-color`): a bug fix that is not fixing a regression or issue with a published release
-1. All other types listed in the [commit message types](/.github/PROCESS_COMMIT_MESSAGE.md)
-
-The following branch should be merged back to **both** `main` and `develop`:
-
-1. A `release` branch (e.g. `release/0.1.x`): contains all fixes and (optionally) features that are tested and should go into the release
-
-
-## Feature Branches
-
-Each new feature should reside in its own branch, based on the `develop` branch. When a feature is complete, it should be merged back into `develop`. Features should never interact directly with `main`.
-
-## Refactor Branches
-
-Each part of refactor should reside in its own branch, based on the `develop` branch. When a refactor is complete, it should be merged back into `develop`. Refactor should never interact directly with `main`.
-
-
-## Release Branches
-
-Once `develop` has acquired enough features for a release (or a predetermined release date is approaching), fork a `release` branch off of `develop`. Creating this branch starts the next release cycle, so no new features can be added after this point - only bug fixes, documentation generation, changelog, and other release-oriented tasks should go in this branch.
-
-Once the `release` is ready, it will get merged into `main` and `develop`, then the `release` branch will be deleted. It’s important to merge back into `develop` because critical updates may have been added to the release branch and they need to be accessible to new features. This should be done in a pull request after review. A pull request adding a feature should be approved by one team member.
-
-### Production release
+## Production release
 
 Follow [releasing process](PROCESS_RELEASING.md) instructions
 
-## Hotfix Branches
-
-Maintenance or “hotfix” branches are used to quickly patch production releases. This is the only branch that should fork directly off of `main`. As soon as the fix is complete, it should be merged into both `main` and `develop` (or the current release branch).
-
-## Fix Branches
-
-“fix” branches are used to quickly patch for develop. This branch similar to `refactor`. As soon as the fix is complete, it should be merged into `develop` (or the current release branch).
-
-## Other
-
-### Merge branches
+## Merge branches
 
 When you merge 2 branches, don't change commit message. Just write `git commit` in the terminal (or IDE) without `-m` flag, you will see editor like vim or nano, close it and that is all.
 Sometimes you can get conflicts after merge. You need to fix conflicts in specific files, add only these files via `git add [filename]` (or IDE). And write `git commit` without message.
