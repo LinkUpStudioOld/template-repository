@@ -17,6 +17,15 @@ After your changes have been merged into the main branch, our CI/CD pipeline wil
 This will also create a draft release tag. This tag is used to track the changes that are included in the upcoming release. It's important to keep an eye on the staging environment to make sure everything is working as expected.
 
 ## Release and Production Deployment
-The final step in the process is to publish the release. This action triggers the CI/CD pipeline to deploy the changes to the production environment.
+Once the draft release is confirmed and ready for production, it is published on GitHub.
 
-Remember to update the release notes to describe the changes included in the release. This will help users understand what has changed and how it might affect them.
+Publishing the release automatically triggers the deployment process to the production environment.
+
+Remember to check or update the release notes to describe the changes included in the release. This will help users understand what has changed and how it might affect them.
+
+## Redeployment Instructions:
+
+If a redeployment of the current build is needed, the actions can be manually re-run.
+
+This allows for flexibility in case of unexpected issues or the need to quickly apply the same build to the production environment again.
+
