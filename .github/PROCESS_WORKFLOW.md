@@ -49,7 +49,7 @@ All branches should follow the syntax of `{type}/{details}` where `{type}` is th
 
 # Workflow 2
 
-![Git Workflows-workflow with develop branch drawio (1)](https://github.com/LinkUpStudioOld/template-repository/assets/7302777/4d5271f1-d7e7-4557-b80b-54439faa30e5)
+![Git Workflows-workflow with develop branch drawio (2)](https://github.com/LinkUpStudioOld/template-repository/assets/7302777/18307e95-ab61-4d86-a1c1-027c40f12016)
 
 
 ## Overview
